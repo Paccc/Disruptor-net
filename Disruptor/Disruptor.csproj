@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Atomic\Volatile.cs">
+      <Link>Atomic\Volatile.cs</Link>
+    </Compile>
+    <Compile Include="..\Disruptor.Scheduler\RoundRobinThreadAffinedTaskScheduler.cs">
+      <Link>Scheduler\RoundRobinThreadAffinedTaskScheduler.cs</Link>
+    </Compile>
     <Compile Include="..\Version.cs">
       <Link>Properties\Version.cs</Link>
     </Compile>
@@ -97,12 +103,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Atomic\Atomic.csproj">
-      <Project>{bdb4336e-54f2-475d-8193-b730c522261f}</Project>
-      <Name>Atomic</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--<Import Project="..\packages\GitInfoPlanter.1.6.9\build\GitInfoPlanter.targets" Condition="Exists('..\packages\GitInfoPlanter.1.6.9\build\GitInfoPlanter.targets')" />-->
