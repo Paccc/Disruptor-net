@@ -1,4 +1,4 @@
-using System.Threading;
+using Disruptor.Threading;
 using NUnit.Framework;
 
 namespace Atomic.Tests

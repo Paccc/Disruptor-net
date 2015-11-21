@@ -97,7 +97,7 @@ namespace Disruptor.Tests
             var dependentSequences = new[] { dependentSequence };
             _claimStrategy.SetSequence(BufferSize - 1L, dependentSequences);
 
-            var done = new Volatile.Boolean(false);
+            var done = new Threading.Volatile.Boolean(false);
             var beforeLatch = new ManualResetEvent(false);
             var afterLatch = new ManualResetEvent(false);
 

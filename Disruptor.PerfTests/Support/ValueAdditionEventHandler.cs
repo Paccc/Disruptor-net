@@ -5,7 +5,7 @@ namespace Disruptor.PerfTests.Support
     public class ValueAdditionEventHandler : IEventHandler<ValueEvent>
     {
         private readonly long _iterations;
-        private Volatile.PaddedLong _value;
+        private Threading.Volatile.PaddedLong _value;
         private readonly ManualResetEvent _mru;
 
         public ValueAdditionEventHandler(long iterations, ManualResetEvent mru)

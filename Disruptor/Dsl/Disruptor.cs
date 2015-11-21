@@ -17,7 +17,7 @@ namespace Disruptor.Dsl
         private readonly RingBuffer<T> _ringBuffer;
         private readonly TaskScheduler _taskScheduler;
         private readonly EventProcessorRepository<T> _eventProcessorRepository = new EventProcessorRepository<T>();
-        private Volatile.Boolean _running = new Volatile.Boolean(Stopped);
+        private Threading.Volatile.Boolean _running = new Threading.Volatile.Boolean(Stopped);
         private readonly EventPublisher<T> _eventPublisher;
         private IExceptionHandler _exceptionHandler;
 

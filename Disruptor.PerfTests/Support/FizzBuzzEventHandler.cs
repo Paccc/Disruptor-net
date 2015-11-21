@@ -7,7 +7,7 @@ namespace Disruptor.PerfTests.Support
         private readonly FizzBuzzStep _fizzBuzzStep;
         private readonly long _iterations;
         private readonly ManualResetEvent _mru;
-        private Volatile.PaddedLong _fizzBuzzCounter;
+        private Threading.Volatile.PaddedLong _fizzBuzzCounter;
 
         public long FizzBuzzCounter
         {
@@ -19,7 +19,7 @@ namespace Disruptor.PerfTests.Support
             _fizzBuzzStep = fizzBuzzStep;
             _iterations = iterations;
             _mru = mru;
-            _fizzBuzzCounter = new Volatile.PaddedLong(0);
+            _fizzBuzzCounter = new Threading.Volatile.PaddedLong(0);
         }
 
         public void OnNext(FizzBuzzEvent data, long sequence, bool endOfBatch)

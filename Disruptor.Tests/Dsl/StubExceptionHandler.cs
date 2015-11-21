@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Threading;
 
 namespace Disruptor.Tests.Dsl
 {
     public class StubExceptionHandler : IExceptionHandler
     {
-        private StructWrapper<Volatile.Reference<Exception>> _exceptionHandled;
+        private StructWrapper<Threading.Volatile.Reference<Exception>> _exceptionHandled;
 
-        public StubExceptionHandler(StructWrapper<Volatile.Reference<Exception>> exceptionHandled)
+        public StubExceptionHandler(StructWrapper<Threading.Volatile.Reference<Exception>> exceptionHandled)
         {
             _exceptionHandled = exceptionHandled;
         }

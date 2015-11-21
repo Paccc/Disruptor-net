@@ -1,5 +1,4 @@
 ﻿using System.Threading;
-using Disruptor;
 
 namespace Disruptor
 {
@@ -11,8 +10,8 @@ namespace Disruptor
     public sealed class SingleThreadedClaimStrategy : IClaimStrategy
     {
         private readonly int _bufferSize;
-        private Volatile.PaddedLong _claimSequence = new Volatile.PaddedLong(Sequencer.InitialCursorValue);
-        private Volatile.PaddedLong _minGatingSequence = new Volatile.PaddedLong(Sequencer.InitialCursorValue);
+        private Threading.Volatile.PaddedLong _claimSequence = new Threading.Volatile.PaddedLong(Sequencer.InitialCursorValue);
+        private Threading.Volatile.PaddedLong _minGatingSequence = new Threading.Volatile.PaddedLong(Sequencer.InitialCursorValue);
 
         /// <summary>
         /// Construct a new single threaded publisher <see cref="IClaimStrategy"/> for a given buffer size.

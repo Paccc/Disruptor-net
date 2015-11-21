@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 
 namespace Disruptor
 {
@@ -14,7 +13,7 @@ namespace Disruptor
         private const bool Running = true;
         private const bool Stopped = false;
 
-        private Volatile.Boolean _running = new Volatile.Boolean(Stopped);
+        private Threading.Volatile.Boolean _running = new Threading.Volatile.Boolean(Stopped);
         private readonly Sequence _sequence = new Sequence(Sequencer.InitialCursorValue);
         private readonly RingBuffer<T> _ringBuffer;
         private readonly ISequenceBarrier _sequenceBarrier;

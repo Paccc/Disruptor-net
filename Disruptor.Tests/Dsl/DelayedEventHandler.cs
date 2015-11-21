@@ -5,7 +5,7 @@ namespace Disruptor.Tests.Dsl
 {
     internal class DelayedEventHandler : IEventHandler<TestEvent>
     {
-        private Volatile.Boolean readyToProcessEvent = new Volatile.Boolean(false);
+        private Threading.Volatile.Boolean readyToProcessEvent = new Threading.Volatile.Boolean(false);
         private volatile bool stopped = false;
 
         public void OnNext(TestEvent data, long sequence, bool endOfBatch)
@@ -30,7 +30,7 @@ namespace Disruptor.Tests.Dsl
                 try {
                     Thread.Yield();
                 }
-                catch (ThreadInterruptedException e) {
+                catch (ThreadInterruptedException) {
                     return;
                 }
             }

@@ -1,5 +1,3 @@
-using System.Threading;
-
 namespace Disruptor
 {
     /// <summary>
@@ -8,7 +6,7 @@ namespace Disruptor
     /// </summary>
     public class Sequence
     {
-        private Volatile.PaddedLong _value = new Volatile.PaddedLong(Sequencer.InitialCursorValue);
+        private Threading.Volatile.PaddedLong _value = new Threading.Volatile.PaddedLong(Sequencer.InitialCursorValue);
 
         /// <summary>
         /// Default Constructor that uses an initial value of <see cref="Sequencer.InitialCursorValue"/>

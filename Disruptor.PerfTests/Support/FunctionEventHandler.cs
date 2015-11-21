@@ -5,7 +5,7 @@ namespace Disruptor.PerfTests.Support
     public class FunctionEventHandler : IEventHandler<FunctionEvent>
     {
         private readonly FunctionStep _functionStep;
-        private Volatile.PaddedLong _stepThreeCounter = default(Volatile.PaddedLong);
+        private Threading.Volatile.PaddedLong _stepThreeCounter = default(Threading.Volatile.PaddedLong);
         private readonly long _iterations;
         private readonly ManualResetEvent _mru;
 

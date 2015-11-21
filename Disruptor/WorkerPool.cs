@@ -14,7 +14,7 @@ namespace Disruptor
         private const bool Running = true;
         private const bool Stopped = false;
 
-        private Volatile.Boolean _running = new Volatile.Boolean(Stopped);
+        private Threading.Volatile.Boolean _running = new Threading.Volatile.Boolean(Stopped);
         private readonly Sequence _workSequence = new Sequence(Sequencer.InitialCursorValue);
         private readonly RingBuffer<T> _ringBuffer;
         private readonly WorkProcessor<T>[] _workProcessors;

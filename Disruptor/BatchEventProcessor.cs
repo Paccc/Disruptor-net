@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+using Disruptor.Threading;
 
 namespace Disruptor
 {

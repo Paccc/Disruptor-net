@@ -13,7 +13,7 @@ namespace Disruptor
     /// </summary>
     public class MultiThreadedClaimStrategy : AbstractMultiThreadedClaimStrategy
     {
-        private readonly Volatile.LongArray _pendingPublication;
+        private readonly Threading.Volatile.LongArray _pendingPublication;
         private readonly int _pendingMask;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Disruptor
                 throw new ArgumentException("must be power of 2", "pendingBufferSize");
             }
             _bufferSize = bufferSize;
-            _pendingPublication = new Volatile.LongArray(pendingBufferSize);
+            _pendingPublication = new Threading.Volatile.LongArray(pendingBufferSize);
             _pendingMask = pendingBufferSize - 1;
         }
 

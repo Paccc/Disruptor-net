@@ -5,7 +5,7 @@ namespace Disruptor.PerfTests.Support
     public class ValueMutationEventHandler : IEventHandler<ValueEvent>
     {
         private readonly Operation _operation;
-        private Volatile.PaddedLong _value = new Volatile.PaddedLong(0);
+        private Threading.Volatile.PaddedLong _value = new Threading.Volatile.PaddedLong(0);
         private readonly long _iterations;
         private readonly CountdownEvent _latch;
 

@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 
 namespace Disruptor
 {
@@ -12,7 +11,7 @@ namespace Disruptor
     /// </summary>
     public class SequenceGroup : Sequence
     {
-        private Volatile.Reference<Sequence[]> _sequencesRef = new Volatile.Reference<Sequence[]>(new Sequence[0]);
+        private Threading.Volatile.Reference<Sequence[]> _sequencesRef = new Threading.Volatile.Reference<Sequence[]>(new Sequence[0]);
 
         /// <summary>
         /// Current sequence number

@@ -9,7 +9,7 @@ namespace Disruptor
     /// </summary>
     public sealed class MultiThreadedLowContentionClaimStrategy : AbstractMultiThreadedClaimStrategy
     {        
-        private Volatile.PaddedLong _claimSequence = new Volatile.PaddedLong(Sequencer.InitialCursorValue);
+        private Threading.Volatile.PaddedLong _claimSequence = new Threading.Volatile.PaddedLong(Sequencer.InitialCursorValue);
         private readonly ThreadLocal<MutableLong> _minGatingSequenceThreadLocal;
 
         /// <summary>
