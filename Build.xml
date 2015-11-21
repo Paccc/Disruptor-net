@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
+	<Configuration>Release</Configuration>
     <MSBuildCommunityTasksPath>$(MSBuildProjectDirectory)\Lib\MSBuild.Community\</MSBuildCommunityTasksPath>
     <SourceDir>$(MSBuildProjectDirectory)</SourceDir>
-    <NUnitToolPath>$(MSBuildProjectDirectory)\packages\NUnit.Runners.2.6.2\tools</NUnitToolPath>
-    <TargetDir>$(MsBuildProjectDirectory)\build\release\</TargetDir>
+    <NUnitToolPath>$(MSBuildProjectDirectory)\packages\NUnit.Runners.2.6.4\tools</NUnitToolPath>
+    <TargetDir>$(MsBuildProjectDirectory)\build\$(Configuration)\</TargetDir>
     <ReportDir>$(TargetDir)Report\</ReportDir>
     <PerfReportDir>$(ReportDir)Perf\</PerfReportDir>
     <UnitReportDir>$(ReportDir)Unit\</UnitReportDir>
@@ -61,7 +62,7 @@
   <Target Name="Build" DependsOnTargets="UpdateVersion;PreBuild">
     <MSBuild
 		  Projects="NDisruptor.sln"
-		  Properties="Configuration=Release;OutputPath=$(BinDir);Optimize=true"
+		  Properties="Configuration=$(Configuration);OutputPath=$(BinDir);Optimize=true"
 		  StopOnFirstFailure="true"
 		  ContinueOnError="false"
 		/>
@@ -131,7 +132,7 @@
 
     <!-- Create NuGet package -->
     <Pack 
-      NuGetExePath="$(SourceDir)\packages\NuGet.CommandLine.2.6.1\tools\NuGet.exe"
+      NuGetExePath="$(SourceDir)\packages\NuGet.CommandLine.2.8.6\tools\NuGet.exe"
       ManifestFile="$(SourceDir)\Package.nuspec"
       BasePath="$(BinDir)"
       OutputDirectory="$(NuGetDir)"
